@@ -12,5 +12,8 @@ public class NonVegMenu implements Menu {
         return new NonVegClassicBurger() ;
     }
 
-    
+    @Override
+    public String getCategoryName(){
+        return "Non Vegeterian Category" ;
+    }
 }

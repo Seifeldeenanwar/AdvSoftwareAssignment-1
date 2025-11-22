@@ -11,9 +11,12 @@ public class ResturantService {
         Ep = menu.creatEasternPizza() ;
         Ip = menu.createItalianPizza() ;
         Cp = menu.createBurger() ;
-        Ep.getDescription() ;
-        Ip.getDescription() ;
-        Cp.getDescription();
+        System.out.println(menu.getCategoryName() + ": ");
+        System.out.println();
+        System.out.println(Ep.getDescription()) ;
+        System.out.println( Ip.getDescription());
+        System.out.println(Cp.getDescription());
+        System.out.println();
     }
     public void setOrder(Order order) {
         this.order = order ;
@@ -42,18 +45,18 @@ public class ResturantService {
     public void generateFinalReceipt(){
         List<Item> ls = new ArrayList<>();
         ls = order.getListOrder() ;
+        System.out.println("\nReceipt info :");
         for(Item i : ls){
-            System.out.println(i.getDescription() + " cost = " + i.getcost());
+            System.out.println(i.getDescription() + " " + i.getcost());
         }
         double totalCost = getTotalCost() ;
         double totaldiscount = getDiscount() ;
         System.out.print("payment method is ");
         payment.pay() ;
-        System.out.println();
+        System.out.println("Total discount = "+totaldiscount);
         System.out.print("Taxes = ");
-        order.getTax() ;
-        System.out.println();
-        System.out.println("Total cost After discount = " + (totalCost - totaldiscount));
+        System.out.println(order.getTax());
+        System.out.println("Total cost After discount and add taxe = " + (totalCost - totaldiscount + order.getTax()));
     }
     
 }

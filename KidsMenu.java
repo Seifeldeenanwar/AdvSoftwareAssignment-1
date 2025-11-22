@@ -11,6 +11,10 @@ public class KidsMenu implements Menu {
     public ClassicBurger createBurger(){
         return new KidClassicBurger() ;
     }
+    @Override
+    public String getCategoryName(){
+        return "Kids Category" ;
+    }
 
     
 }
