@@ -2,23 +2,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Din_In implements Order {
-    private final Double taxe = 10.5;
+    // private final Double taxe = 10.5;
     private List<Observer> observers;
-    private List<String> Items;
+    private List<Item> Items;
 
     public Din_In() {
         observers = new ArrayList<Observer>();
-        Items = new ArrayList<String>();
-    }
-
-    @Override
-    public void setPaymentMethod(String method) {
-
+        Items = new ArrayList<Item>();
     }
 
     @Override
     public Double getTax() {
-        return taxe;
+        return 4.25 ;
     }
 
     @Override
@@ -32,19 +27,19 @@ public class Din_In implements Order {
     }
 
     @Override
-    public void setItem(String Item) {
+    public void setItem(Item Item) {
         Items.add(Item);
         notifyObservers(Item);
 
     }
 
     @Override
-    public List<String> getListOrder() {
+    public List<Item> getListOrder() {
         return Items;
     }
 
     @Override
-    public void notifyObservers(String Item) {
+    public void notifyObservers(Item Item) {
         for (Observer obs : observers) {
             obs.Update(Item);
         }

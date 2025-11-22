@@ -5,13 +5,12 @@ public interface Order {
 
     public void removeObserver(Observer odsever);
 
-    public void setItem(String Item);
+    public void setItem(Item item);
 
-    public List<String> getListOrder();
+    public List<Item> getListOrder();
 
-    public void notifyObservers(String Item);
+    public void notifyObservers(Item Item);
 
     public Double getTax();
 
-    public void setPaymentMethod(String method);
 }
