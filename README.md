@@ -26,7 +26,7 @@ This step is repeated in each input until the program terminates
 Wrong input case:
 invalid data type
 
-1,2,3 -> Takeaway order  -> 6
+1,2,3 -> Takeaway order  -> Y
 Display an Error message and ask to enter a valid input 
 --
 This step is repeated in each input field until the program terminates
