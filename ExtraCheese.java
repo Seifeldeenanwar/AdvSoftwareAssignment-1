@@ -9,9 +9,6 @@ public class ExtraCheese extends Additions {
     public double getcost(){
         return item.getcost() + 2.5 ;
     }
-    public double getdiscount(){
-        return item.getdiscount() + 0.15 ;
-    }
 
     
 }

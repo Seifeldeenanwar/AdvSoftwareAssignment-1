@@ -3,6 +3,7 @@ public class Main {
         Item extracheeseItalianpizza = new ExtraCheese(new NonVegItalianPizza()) ;
         Item ExtraOnionVegClassicBurger = new ExtraOnion(new VegItalianPizza()) ;
         Item extracheeseclassickidsburger = new ExtraCheese(new KidClassicBurger()) ;
+        Item nonvegItalianPizzaWithExtraToppingAndExtraCheese = new ExtraCheese(new ExtraTopping(new NonVegItalianPizza())) ;
         Menu vegMenu = new VegMenu() ;
         Menu NonVegMenu = new NonVegMenu() ;
         Menu Kids = new KidsMenu() ;
@@ -18,6 +19,7 @@ public class Main {
         order.setItem(ExtraOnionVegClassicBurger);
         order.setItem(extracheeseItalianpizza);
         order.setItem(extracheeseclassickidsburger);
+        order.setItem(nonvegItalianPizzaWithExtraToppingAndExtraCheese);
         Rs.setOrder(order);
         Rs.setPaymentmethod(new CreditCard());
         Rs.generateFinalReceipt();

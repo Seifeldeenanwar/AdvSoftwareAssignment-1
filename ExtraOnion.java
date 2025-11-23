@@ -9,9 +9,6 @@ public class ExtraOnion extends Additions {
     public double getcost(){
         return item.getcost() + 1 ;
     }
-    public double getdiscount(){
-        return item.getdiscount() + 0.05 ;
-    }
 
     
 }

@@ -9,10 +9,5 @@ public class ExtraTopping extends Additions {
     public double getcost(){
         return item.getcost() + 3 ;
     }
-    public double getdiscount(){
-        return item.getdiscount() + 0.25 ;
-    }
-
-
     
 }
