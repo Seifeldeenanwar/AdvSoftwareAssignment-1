@@ -1,23 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResturantService {
+public class ResturantService implements Service {
     public Order order ;
     public Payment payment ;
     public EasternPizza Ep ;
     public ItalianPizza Ip ;
     public ClassicBurger Cp ; 
+    @Override
     public void displayMenu(Menu menu){
         Ep = menu.creatEasternPizza() ;
         Ip = menu.createItalianPizza() ;
         Cp = menu.createBurger() ;
         System.out.println(menu.getCategoryName() + ": ");
         System.out.println();
-        System.out.println(Ep.getDescription()) ;
-        System.out.println( Ip.getDescription());
-        System.out.println(Cp.getDescription());
+        System.out.println("1- "+Ep.getDescription()) ;
+        System.out.println("2- "+ Ip.getDescription());
+        System.out.println("3- "+Cp.getDescription());
         System.out.println();
     }
+    @Override
     public void setOrder(Order order) {
         this.order = order ;
     }
@@ -30,6 +32,7 @@ public class ResturantService {
         }
         return totalCost ;
     }
+    @Override
     public double getDiscount(){
         double totaldiscount = 0 ;
         List<Item> ls = new ArrayList<>();
@@ -39,9 +42,11 @@ public class ResturantService {
         }
         return totaldiscount ;
     }
+    @Override
     public void setPaymentmethod(Payment p){
         this.payment = p ;
     }
+    @Override
     public void generateFinalReceipt(){
         List<Item> ls = new ArrayList<>();
         ls = order.getListOrder() ;
